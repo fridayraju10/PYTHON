@@ -1,0 +1,16 @@
+num = int(input("Enter a number: "))
+
+original_num = num
+prime_factors_count = 0
+factor = 2
+
+while factor * factor <= num:
+    while num % factor == 0:
+        prime_factors_count += 1
+        num //= factor
+    factor += 1
+
+if num > 1:
+    prime_factors_count += 1
+
+print("The number of prime factors of", original_num, "is:", prime_factors_count)
