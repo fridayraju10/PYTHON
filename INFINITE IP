@@ -1,0 +1,10 @@
+total_marks = 0
+
+while True:
+    mark = int(input("Enter a mark (enter 0 to stop): "))
+    if mark == 0:
+        break
+    if mark >= 40:
+        total_marks += mark
+
+print("Total of all marks (omitting less than 40):", total_marks)
