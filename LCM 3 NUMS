@@ -1,0 +1,18 @@
+a = int(input("Enter num1: "))
+b = int(input("Enter num2: "))
+c = int(input("Enter num3: "))
+
+if a > b and a > c:
+    max_num = a
+elif b > a and b > c:
+    max_num = b
+else:
+    max_num = c
+
+while True:
+    if max_num % a == 0 and max_num % b == 0 and max_num % c == 0:
+        lcm = max_num
+        break
+    max_num += 1
+
+print("The LCM is", lcm)
