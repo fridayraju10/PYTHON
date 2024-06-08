@@ -1,0 +1,12 @@
+input_str = "DCCBAA"
+if not input_str:
+    total_sum = 0
+else:
+    letter_values = {'A': 1, 'B': 10, 'C': 100, 'D': 1000, 'E': 10000, 'F': 100000, 'G': 1000000}
+    total_sum = 0
+    for letter in input_str:
+        if letter in letter_values:
+            total_sum += letter_values[letter]
+
+
+print(total_sum)  
