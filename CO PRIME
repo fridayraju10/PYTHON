@@ -1,0 +1,27 @@
+a=int(input("Enter first number"))
+b=int(input("Enter second number"))
+l1=[]
+for i in range(2,a):
+    if a%i==0:
+        l1.append(i)
+print(l1)
+
+l2=[]
+for i in range(2,b):
+    if b%i==0:
+        l2.append(i)
+print(l2)
+
+final=[]
+for x in l1:
+    for y in l2:
+        if x == y:
+           final.append(x)
+print(final)
+total=len(final)
+print(total)
+
+if total > 0:
+    print( " The two numbers are NOT coprime")
+else:
+    print(" The two numbers are CO PRIME")
