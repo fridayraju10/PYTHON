@@ -1,0 +1,55 @@
+name1=str(input(" Enter the Boy name without spaces:"))
+name2=str(input("Enter the girl name without spaces"))
+
+l1=[]
+for i in name1:
+    l1.append(i)
+print(l1)
+
+l2=[]
+for j in name2:
+    l2.append(j)
+print(l2)
+
+a=len(l1)
+b=len(l2)
+
+for x in range(a):
+    for y in range(b):
+        if l1[x]==l2[y]:
+            l1[x]=2
+            l2[y]=2
+print(l1)
+print(l2)
+
+len1with2=l1.count(2)
+reallen1=a-len1with2
+
+len2with2=l2.count(2)
+reallen2=b-len2with2
+
+final=reallen1+reallen2
+
+print(final)
+
+
+if final==1:
+    print(" The Relation is SISTER")
+elif final==2:
+    print(" The Relation is ENEMY")
+elif final==3:
+    print(" The Relation is FRIEND")
+elif final==4:
+    print(" The Relation is ENEMY")
+elif final==5:
+    print(" The Relation is AFFECTION")
+elif final==6:
+    print(" The Relation is MARRIAGE")
+elif final==7:
+    print(" The Relation is MARRIAGE")
+elif final==8:
+    print("The Relation is AFFECTION")
+elif final==9:
+    print(" The Relation is ENEMY")
+elif final==10:
+    print(" The Relation is LOVE")
