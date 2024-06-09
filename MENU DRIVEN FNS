@@ -1,0 +1,80 @@
+def add():
+    a=int(input("Enter num1 : "))
+    b=int(input("Enter num2 : "))
+    print(a+b)
+    
+def lcm():
+    a=int(input("Enter num1 : "))
+    b=int(input("Enter num2 : "))
+    if(a>b):
+      c=b
+    else:
+      c=a
+    step=c
+    while(1):
+      if(c%a==0 and c%b==0):
+        break
+      else:
+        c=c+step
+    print("The LCM is",c)
+
+def coprime():
+    a=int(input("Enter first number"))
+    b=int(input("Enter second number"))
+    l1=[]
+    for i in range(2,a):
+      if a%i==0:
+        l1.append(i)
+    print(l1)
+
+    l2=[]
+    for i in range(2,b):
+      if b%i==0:
+        l2.append(i)
+    print(l2)
+
+    final=[]
+    for x in l1:
+      for y in l2:
+        if x == y:
+           final.append(x)
+    print(final)
+    total=len(final)
+    print(total)
+
+    if total > 0:
+      print( " The two numbers are NOT coprime")
+    else:
+      print(" The two numbers are CO PRIME")
+
+def factor():
+    a=int(input("Enter the number"))
+    s=0
+    for i in range(1,a):
+      if a%i==0:
+        print(i,end=' ')
+        s=s+i
+    print('')
+    print(s)
+
+    
+
+
+
+while(1):
+    print("---------------------")
+    print("1.ADDITION")
+    print("2.LCM")
+    print("3.FACTOR")
+    print("4.CO PRIME")
+    
+    a=int(input("Enter your choice"))
+    
+    if(a==1):
+        add()
+    elif(a==2):
+        lcm()
+    elif(a==3):
+        factor()
+    elif(a==4):
+        coprime()
