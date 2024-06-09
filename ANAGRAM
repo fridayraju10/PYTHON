@@ -1,0 +1,10 @@
+a=input(" Enter the first word")
+b=input(" Enter the second word")
+a1=a.lower()
+b1=b.lower()
+c=sorted(a1)
+d=sorted(b1)
+if c==d:
+    print(" Two words are Anagram")
+else:
+    print("Two words are NOT Anagram")
