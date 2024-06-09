@@ -1,0 +1,21 @@
+students = [
+    {"name": "raju", "dept": "cse", "marks": [20, 30, 40]},
+    {"name": "vijay", "dept": "cse", "marks": [10, 70, 43]},
+    {"name": "pavi", "dept": "ece", "marks": [22, 38, 56]},
+    {"name": "rose", "dept": "ece", "marks": [26, 36, 89]},
+    {"name": "virat", "dept": "ece", "marks": [16, 90, 43]}
+]
+
+
+for student in students:
+    total_marks = sum(student["marks"])
+    percentage = (total_marks / (len(student["marks"]) * 100)) * 100
+    student["percentage"] = percentage
+
+
+sorted_students = sorted(students, key=lambda x: x["percentage"], reverse=True)
+
+
+for i, student in enumerate(sorted_students):
+    position = "first" if i == 0 else "second" if i == 1 else "third" if i == 2 else str(i+1) + "th"
+    print(f"Student {student['name']} has scored {student['percentage']:.2f}% - he stands {position}")
