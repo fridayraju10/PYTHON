@@ -1,0 +1,22 @@
+def SumOfDigits(num):
+    sum = 0
+    while num > 0:
+        sum += num % 10
+        num //= 10
+    return sum
+
+def DifferenceSumOfDigits(arr, n):
+    f1 = 0
+    f2 = 0
+
+    for i in range(n):
+        f1 += SumOfDigits(arr[i])
+        f2 += arr[i]
+
+    result = (f1 % 10) - (f2 % 10)
+    return result
+
+arr = [11, 14, 16, 10, 9, 8, 24, 5, 4, 3]
+n = 10
+output = DifferenceSumOfDigits(arr, n)
+print("Output:", output)
