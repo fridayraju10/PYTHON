@@ -1,0 +1,12 @@
+def prime_factors(num):
+    i = 2
+    if num == 1:
+        return
+    while num % i != 0:
+        i += 1
+    print(i, end=" ")
+    prime_factors(num // i)
+
+num = int(input("Enter a number: "))
+print("\nUsing Recursion:\n")
+prime_factors(num)
