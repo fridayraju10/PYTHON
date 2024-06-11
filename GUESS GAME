@@ -1,0 +1,58 @@
+import time
+import random
+name1=input("Enter the name of player 1")
+name2=input("Enter the name of player 2")
+print("Helo {} and {}".format(name1,name2))
+
+time.sleep(1)
+print("Computer has some five intergers in mind  ")
+time.sleep(1)
+print("You both can have five choices each to guess .. Ready??")
+num=[]
+while(len(num)!=5):
+    a=random.randint(1,10)
+    if(a in num):
+        a=random.randint(1,10)
+    else:
+        num.append(a)
+
+
+s1=0
+player1=[]
+for i in range(3):
+    p1=int(input("Guess ur choice--->"))
+    player1.append(p1)
+    if(p1 in num):
+        s1=s1+1
+        print("CORRECT")
+    else:
+        print("WRONG")
+print(s1)
+
+player2=[]
+s2=0
+print("Its {} turn".format(name2))
+for j in range(3):
+    p2=int(input("Guess ur choice--->"))
+    player2.append(p2)
+    if(p2 in num):
+        s2=s2+1
+        print("CORRECT")
+    else:
+        print("WRONG")
+print(s2)
+print("Lets see summary and result")
+time.sleep(1)
+print("number in mind",num)
+print("{} has chosen".format(player1))
+print("His score is : ",s1)
+print("{} has chosen".format(player2))
+print("His score is : ",s2)
+
+if(s1>s2):
+    print(" Mr/Mr {} is winner".format(name1))
+elif(s2>s1):
+    print(" Mr/Ms {} is winner".format(name2))
+else:
+    print(" Score level --- Draw")
+    
