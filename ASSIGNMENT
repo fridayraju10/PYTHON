@@ -1,3 +1,19 @@
+DATE :12.06.2024 (ALL THREE QUESTION ARE IN LEVEL 1)
+
+1. PROGRAM TO PRINT RECTANGULAR BOX USIMG STAR.. LIKE *************
+                                                      *             *
+                                                      *             *
+                                                      *             *
+                                                      *************
+2. TAKE 6 DIGIT NUMBER AS INPUT. CONVERT INTO NUMBER WHICH CONTAINS ONLY PRIME DIGITS.. 
+     example : if a= 689354, the output is 35  (not 53)
+
+3.  JUST PRINT THE NEXT CHARACTER FOR THE EACH CHARACTER OF STRING 
+     example : if input is ABCD , OUTPUT IS BCDE
+
+
+
+
 DATE : 11.06.2024
 
 1.(LEVEL 0) PROGRAM TO ACCEPT LIST OF INETGERS AS INPUT , THEN PRINT ONLY NUMBERS IF IT IS MULTIPLE OF 5 OR 11
