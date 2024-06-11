@@ -1,0 +1,46 @@
+class Rec:
+    def set_dim(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+R1 = Rec()
+R1.set_dim(5, 4)
+print("Area is", R1.area())
+print("Perimeter is:", R1.perimeter())
+-----------------CLAS USING LIST-----------------------------------
+class Rec:
+    def set_dim(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+        
+rectangle_list = []
+num_rectangles = int(input("Enter the number of rectangles: "))
+for i in range(num_rectangles):
+    R = Rec()
+    width = float(input(f"Enter the width of rectangle {i+1}: "))
+    height = float(input(f"Enter the height of rectangle {i+1}: "))
+    R.set_dim(width, height)
+    rectangle_list.append(R)
+for i in range(num_rectangles):
+    print(f"Rectangle {i+1}:")
+    print("Area is", rectangle_list[i].area())
+--------------------CONSTRUCTOR--------------------------------
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+
+person1 = Person("SUMIT", 30)
+person1.display()
