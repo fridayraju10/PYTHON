@@ -1,0 +1,51 @@
+class Master:
+    def add(self, a, b):
+        print(a + b)
+    
+    def sub(self, a, b):
+        print(a - b)
+
+class Simple(Master):
+    def display(self):
+        print("Hai")
+s = Simple()
+s.display()
+s.sub(20,3)
+------------------MULTILEVEL-------------------------------
+class GrandMaster:
+    def add(self, a, b):
+        print(a + b)
+    
+    def sub(self, a, b):
+        print(a - b)
+
+class Master(GrandMaster):
+    def multiply(self, a, b):
+        print(a * b)
+
+class Simple(Master):
+    def display(self):
+        print("Hai")
+
+s = Simple()
+s.add(5, 3)         
+s.sub(5, 3)         
+s.multiply(5, 3)    
+s.display()        
+----------------------MULTIPLE-------------------------------
+class Master1:
+    def add(self, a, b):
+        print(a + b)
+
+class Master2:
+    def sub(self, a, b):
+        print(a - b)
+
+class Simple(Master1, Master2):
+    def display(self):
+        print("Hai")
+s = Simple()
+
+s.add(5, 3)     
+s.sub(5, 3)     
+s.display()   
