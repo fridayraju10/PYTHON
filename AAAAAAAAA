@@ -1,0 +1,51 @@
+import random
+import time
+a=input("Enter playe1 name : ")
+b=input("Enter playe2 name : ")
+print("Hello {} and {}".format(a,b))
+print("You both have 3 chances each to guess.. Ready?")
+print("-------------------")
+time.sleep(2)
+num=[]
+while(len(num)!=5):
+    d=random.randint(1,10)
+    if(d in num):
+        d=random.randint(1,10)
+    else:
+        num.append(d)
+print("{}'s turn".format(a))
+s1=0
+player1=[]
+for i in range(3):
+    p1=int(input("Guess the num:->"))
+    player1.append(p1)
+    if(p1 in num):
+        print("Correct")
+        s1=s1+1
+    else:
+        print("Wrong")
+
+print("Well done {} and now its {} turn".format(a,b))
+s2=0
+player2=[]
+for j in range(3):
+    p2=int(input("Guess the num:->"))
+    player2.append(p2)
+    if(p2 in num):
+        print("Correct")
+        s2=s2+1
+    else:
+        print("Wrong")
+print("---------------")
+print("Lets have summary")
+print("Comp has fixed",num)
+print("{} has chosen".format(a),player1)
+print("Score is ",s1)
+print("{} has chosen".format(b),player2)
+print("Score is ",s2)
+if(s1>s2):
+    print("The winner is {}".format(a))
+elif(s2>s1):
+    print("The winner is {}".format(b))
+else:
+    print("DRAW")
