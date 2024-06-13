@@ -1,0 +1,23 @@
+a="2-5+4"
+operand=[]
+operator=[]
+for i in a:
+    if(i in "+,-"):
+        operator.append(i)
+    else:
+        operand.append(i)
+operator.reverse()
+operator.reverse()
+print(operator)
+print(operand)
+print("-----------")
+while(operator):
+    op=operator.pop()
+    num1=operand.pop()
+    num2=operand.pop()
+    if(op=='+'):
+        operand.append(int(num1)+int(num2))
+    else:
+        operand.append(int(num1)-int(num2))
+    print(operand)
+    print("----------")
