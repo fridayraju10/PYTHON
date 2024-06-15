@@ -1,0 +1,7 @@
+students = [
+    {"name": "vipna", "dept": "cse", "marks": [20, 30, 40,95]},
+    {"name": "rahil", "dept": "cse", "marks": [10, 70, 43,78]},
+    {"name": "shashank", "dept": "ece", "marks": [22, 38, 56,89]},
+    {"name": "jahnavi", "dept": "BT", "marks": [26, 36, 89,67]},
+    {"name": "swaroop", "dept": "ece", "marks": [16, 90, 43,30]}
+]
