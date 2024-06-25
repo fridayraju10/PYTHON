@@ -17,29 +17,30 @@ while(len(num)!=5):
         num.append(a)
 
 
-s1=0
+s1,s2=0,0
 player1=[]
+player2=[]
 for i in range(3):
     p1=int(input("Guess ur choice--->"))
+    while(p1 in player1 or p1 in player2):
+        p1=int(input("it is already chosen Guess another num"))
     player1.append(p1)
     if(p1 in num):
         s1=s1+1
         print("CORRECT")
     else:
         print("WRONG")
-print(s1)
-
-player2=[]
-s2=0
-print("Its {} turn".format(name2))
-for j in range(3):
+        
     p2=int(input("Guess ur choice--->"))
+    while(p2 in player1 or p2 in player2):
+        p2=int(input("it is already chosen Guess another num"))
     player2.append(p2)
     if(p2 in num):
         s2=s2+1
         print("CORRECT")
     else:
         print("WRONG")
+print(s1)
 print(s2)
 print("Lets see summary and result")
 time.sleep(1)
