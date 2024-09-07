@@ -1,0 +1,12 @@
+def find_security_key(data):
+    frequency = {}
+    for digit in str(data):
+        if digit in frequency:
+            frequency[digit] += 1
+        else:
+            frequency[digit] = 1
+    print(frequency)
+    repeating_digits = [digit for digit, count in frequency.items() if count > 1]
+    print(repeating_digits)
+    print(len(repeating_digits))
+find_security_key(578378923)
