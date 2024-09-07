@@ -1,0 +1,9 @@
+def count_trailing_zeros(num):
+    count = 0
+    i = 5
+    while num // i > 0:
+        count += num // i
+        i *= 5
+    print(count)
+
+count_trailing_zeros(10)
