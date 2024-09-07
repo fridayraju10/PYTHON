@@ -1,0 +1,11 @@
+def binary_to_decimal(binary_data):
+    decimal_value = 0
+    length = len(binary_data)
+    
+    for i in range(length):
+        bit = int(binary_data[length - i - 1])
+        decimal_value += bit * (2 ** i)
+    
+    print(decimal_value)
+
+binary_to_decimal("1001")
