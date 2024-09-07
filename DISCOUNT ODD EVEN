@@ -1,0 +1,13 @@
+def calculate_discount(billAmount):
+    odd_sum = 0
+    even_sum = 0
+    while billAmount > 0:
+        digit = billAmount % 10  
+        if digit % 2 == 0:  
+            even_sum += digit
+        else:  
+            odd_sum += digit
+        billAmount //= 10 
+    discount = odd_sum * even_sum
+    print(discount)
+calculate_discount(2514795)
