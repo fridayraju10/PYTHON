@@ -1,0 +1,55 @@
+# Python version of the FLAMES game logic
+
+def flames_game():
+    name1 = input("Enter the boy name without spaces: ")
+    name2 = input("Enter the girl name without spaces: ")
+
+    # Convert the names to character lists
+    l1 = list(name1)
+    l2 = list(name2)
+
+    print(l1)
+    print(l2)
+
+    # Remove common characters
+    a = len(l1)
+    b = len(l2)
+
+    for x in range(a):
+        for y in range(b):
+            if l1[x] == l2[y]:
+                l1[x] = '2'  # Marking common characters as '2'
+                l2[y] = '2'
+
+    print(l1)
+    print(l2)
+
+    # Count remaining characters
+    a = 0
+    b = 0
+
+    for c in l1:
+        if c != '2':
+            a += 1
+
+    for c in l2:
+        if c != '2':
+            b += 1
+
+    cnt = a + b
+    print(cnt)
+
+    # FLAMES list
+    ans = list('flames')
+    f = 0
+
+    # Removing letters based on the count
+    while len(ans) > 1:
+        f = (f + (cnt - 1)) % len(ans)
+        ans.pop(f)
+
+    # Final result
+    print(ans[0])
+
+# Running the FLAMES game
+flames_game()
