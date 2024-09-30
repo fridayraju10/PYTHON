@@ -1,0 +1,92 @@
+import random
+
+# Team names input
+team1 = input("Enter team1 name: ")
+team2 = input("Enter team2 name: ")
+
+# Random number generation for both teams
+ans1 = random.randint(1, 300)
+ans2 = random.randint(1, 300)
+
+# Hints for Team 1
+if ans1 < 150:
+    a1 = "It is less than 150"
+else:
+    a1 = "It is greater than 150"
+    
+if ans1 % 2 == 0:
+    b1 = "It is an even number"
+else:
+    b1 = "It is an odd number"
+    
+if ans1 % 3 == 0:
+    c1 = "It is divisible by 3"
+else:
+    c1 = "It is not divisible by 3"
+
+hint1 = [a1, b1, c1]
+
+# Hints for Team 2
+if ans2 < 150:
+    a2 = "It is less than 150"
+else:
+    a2 = "It is greater than 150"
+    
+if ans2 % 2 == 0:
+    b2 = "It is an even number"
+else:
+    b2 = "It is an odd number"
+    
+if ans2 % 3 == 0:
+    c2 = "It is divisible by 3"
+else:
+    c2 = "It is not divisible by 3"
+
+hint2 = [a2, b2, c2]
+
+# Team 1 turn
+hintcount1 = 0
+for i in range(3):
+    ch = input("Do you want a hint? Say Y/N: ")
+    if ch.lower() == 'y':
+        print("HINT NO {} --->: {}".format(i + 1, hint1[i]))
+        hintcount1 += 1
+    else:
+        break
+print("{} has taken {} hints.".format(team1, hintcount1))
+guess1 = int(input("Now, what is your prediction? "))
+score1 = 300 - (hintcount1 * 25)
+score1 -= abs(guess1 - ans1)
+
+print("--------------------------------------")
+
+# Team 2 turn
+hintcount2 = 0
+for i in range(3):
+    ch = input("Do you want a hint? Say Y/N: ")
+    if ch.lower() == 'y':
+        print("HINT NO {} --->: {}".format(i + 1, hint2[i]))
+        hintcount2 += 1
+    else:
+        break
+print("{} has taken {} hints.".format(team2, hintcount2))
+guess2 = int(input("Now, what is your prediction? "))
+score2 = 300 - (hintcount2 * 25)
+score2 -= abs(guess2 - ans2)
+
+print("----------------------------------------")
+
+# Display answers and scores
+print("Actual answer for {} is {}:".format(team1, ans1))
+print("{}'s score is {}".format(team1, score1))
+
+print("Actual answer for {} is {}:".format(team2, ans2))
+print("{}'s score is {}".format(team2, score2))
+
+# Determine the winner
+if score1 > score2:
+    print("{} is the winner!".format(team1))
+elif score1 < score2:
+    print("{} is the winner!".format(team2))
+else:
+    print("It's a tie!")
