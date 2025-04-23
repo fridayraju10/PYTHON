@@ -1,0 +1,19 @@
+class Solution(object):
+    def maxSlidingWindow(self, nums, k):
+        res = []
+        sliding = deque()
+
+        for i in range(len(nums)):
+            # Remove elements that are out of the current window
+            if sliding and sliding[0] < i - k + 1:
+                sliding.popleft()
+            
+            # Remove the element index from sliding which are smaller than current index element.
+            while sliding and nums[sliding[-1]] < nums[i]:
+                sliding.pop()
+            
+            sliding.append(i)
+
+            if i >= k-1:
+                res.append(nums[sliding[0]])
+        return res
