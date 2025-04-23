@@ -1,0 +1,20 @@
+from collections import deque
+
+def schedule_tasks(tasks, time_slice):
+    queue = deque()
+    for i in range(len(tasks)):
+        queue.append((tasks[i], i + 1))  
+
+    time = 0
+    while queue:
+        task, task_num = queue.popleft()
+        executed_time = min(task, time_slice)
+        time += executed_time
+        print("Task{} executed - {} units -> Total time: {}".format(task_num,executed_time,time))
+        if task > time_slice:
+            queue.append((task - time_slice, task_num))
+
+
+tasks = [10, 5, 8]
+time_slice = 4
+schedule_tasks(tasks, time_slice)
