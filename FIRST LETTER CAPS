@@ -1,0 +1,18 @@
+def main():
+    n = int(input("Enter the number of strings: "))
+    strings = []
+    print("Enter the strings:")
+    for i in range(n):
+        strings.append(input())
+        
+    print("Formatted Strings:")
+    for s in strings:
+        if not s:
+            print(s)  
+            continue
+        first_char = s[0].upper()
+        remaining = s[1:].lower()
+        print(first_char + remaining)
+
+if __name__ == "__main__":
+    main()
