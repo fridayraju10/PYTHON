@@ -1,0 +1,13 @@
+def main():
+    input_str = "Hello World"
+    words = input_str.split(" ")
+    reversed_words = []
+
+    for word in words:
+        reversed_words.append(word[::-1])
+
+    output = " ".join(reversed_words)
+    print(output)
+
+if __name__ == "__main__":
+    main()
