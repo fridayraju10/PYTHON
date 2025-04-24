@@ -1,0 +1,85 @@
+from datetime import datetime
+
+class Bus:
+    def __init__(self, bus_no, ac, capacity):
+        self.bus_no = bus_no
+        self.ac = ac
+        self.capacity = capacity
+
+    def get_bus_no(self):
+        return self.bus_no
+
+    def is_ac(self):
+        return self.ac
+
+    def get_capacity(self):
+        return self.capacity
+
+    def set_ac(self, val):
+        self.ac = val
+
+    def set_capacity(self, cap):
+        self.capacity = cap
+
+    def display_bus_info(self):
+        print(f"Bus No: {self.bus_no} AC: {self.ac} Total Capacity: {self.capacity}")
+
+
+class Booking:
+    def __init__(self):
+        self.passenger_name = ""
+        self.date = None
+        self.bus_no = 0
+
+    def make_booking(self, bookings, buses):
+        self.passenger_name = input("Enter name of passenger: ")
+        self.bus_no = int(input("Enter bus no: "))
+        date_input = input("Enter date dd-mm-yyyy: ")
+        try:
+            self.date = datetime.strptime(date_input, "%d-%m-%Y").date()
+        except ValueError:
+            print("Invalid date format.")
+            return
+
+        if self.is_available(bookings, buses, self.bus_no, self.date):
+            bookings.append(booking)
+            print("Your booking is confirmed")
+        else:
+            print("Sorry. Bus is full. Try another bus or date.")
+
+    def is_available(self, bookings, buses, bus_no, date):
+        capacity = 0
+        for bus in buses:
+            if bus.get_bus_no() == bus_no:
+                capacity = bus.get_capacity()
+
+        booked = 0
+        for b in bookings:
+            if b.bus_no == bus_no and b.date == date:
+                booked += 1
+
+        return booked < capacity
+
+
+def main():
+    buses = [
+        Bus(1, True, 2),
+        Bus(2, False, 50),
+        Bus(3, True, 48)
+    ]
+
+    bookings = []
+
+    for bus in buses:
+        bus.display_bus_info()
+
+    while True:
+        user_opt = int(input("Enter 1 to Book and 2 to Exit: "))
+        if user_opt == 1:
+            booking = Booking()
+            booking.make_booking(bookings, buses)
+        else:
+            break
+
+if __name__ == "__main__":
+    main()
