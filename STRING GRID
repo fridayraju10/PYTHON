@@ -1,0 +1,30 @@
+import random
+
+def generate_grid(input_string):
+    characters = list(input_string)
+
+    grid_size = 9 * 9
+    while len(characters) < grid_size:
+        characters.extend(characters)  
+    random.shuffle(characters)
+
+    grid = [[' ' for _ in range(9)] for _ in range(9)]
+
+    middle_row = 4
+    middle_col = 4
+
+    char_index = 0
+    for i in range(9):
+        for j in range(9):
+            if i == middle_row or j == middle_col:
+                continue 
+            grid[i][j] = characters[char_index]
+            char_index += 1
+    
+   
+    for row in grid:
+        print(' '.join(row))
+
+
+input_string = "RAJAVARMA"
+generate_grid(input_string)
