@@ -1,0 +1,13 @@
+def time_to_reach_top(X, Y, Z):
+    height = 0
+    minutes = 0
+    while height < X:
+        minutes += 1
+        if minutes % 2 == 1:  
+            height += Y
+        else:  
+            height -= Z
+    return minutes
+
+print("Testcase 1 Output:", time_to_reach_top(30, 10, 5))  
+print("Testcase 2 Output:", time_to_reach_top(21, 5, 3))   
