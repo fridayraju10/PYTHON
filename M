@@ -1,0 +1,19 @@
+n=int(input("Enter any number ")) 
+grid = [[' ' for _ in range(n)] for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        if(j==0):
+           grid[i][j]="*"
+        elif(j==n-1):
+            grid[i][j]="*"
+        elif(i<5 and i==j):
+            grid[i][j]="*"
+        elif(i<j and i+j ==8):
+            grid[i][j]="*"
+        else:
+            grid[i][j]=" "
+for i in range(n):
+    for j in range(n):
+        print(grid[i][j],end=" ")
+    print()
+        
