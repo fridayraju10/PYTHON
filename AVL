@@ -1,0 +1,109 @@
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.height = 1
+        self.left = None
+        self.right = None
+
+class AVLTree:
+    def getHeight(self, node):
+        return 0 if node is None else node.height
+
+    def getBalance(self, node):
+        if node is None:
+            return 0
+        return self.getHeight(node.left) - self.getHeight(node.right)
+
+    def rightRotate(self, y):
+        x = y.left
+        T2 = x.right
+
+        x.right = y
+        y.left = T2
+
+        y.height = max(self.getHeight(y.left), self.getHeight(y.right)) + 1
+        x.height = max(self.getHeight(x.left), self.getHeight(x.right)) + 1
+
+        return x
+
+    def leftRotate(self, x):
+        y = x.right
+        T2 = y.left
+
+        y.left = x
+        x.right = T2
+
+        x.height = max(self.getHeight(x.left), self.getHeight(x.right)) + 1
+        y.height = max(self.getHeight(y.left), self.getHeight(y.right)) + 1
+
+        return y
+
+    def leftRightRotate(self, z):
+        z.left = self.leftRotate(z.left)
+        return self.rightRotate(z)
+
+    def rightLeftRotate(self, z):
+        z.right = self.rightRotate(z.right)
+        return self.leftRotate(z)
+
+    def insert(self, node, key):
+        if node is None:
+            return Node(key)
+
+        if key < node.val:
+            node.left = self.insert(node.left, key)
+        elif key > node.val:
+            node.right = self.insert(node.right, key)
+        else:
+            return node
+
+        node.height = max(self.getHeight(node.left), self.getHeight(node.right)) + 1
+
+        balance = self.getBalance(node)
+
+        
+        if balance > 1 and key < node.left.val:
+            return self.rightRotate(node)
+
+      
+        if balance < -1 and key > node.right.val:
+            return self.leftRotate(node)
+
+        
+        if balance > 1 and key > node.left.val:
+            return self.leftRightRotate(node)
+
+       
+        if balance < -1 and key < node.right.val:
+            return self.rightLeftRotate(node)
+
+        return node
+
+    def inorder(self, root):
+        if root:
+            self.inorder(root.left)
+            print(root.val, end=' ')
+            self.inorder(root.right)
+
+    def preorder(self, root):
+        if root:
+            print(root.val, end=' ')
+            self.preorder(root.left)
+            self.preorder(root.right)
+
+
+if __name__ == "__main__":
+    tree = AVLTree()
+    root = None
+
+    elements = [30, 10, 20, 40, 50, 25]
+    for val in elements:
+        root = tree.insert(root, val)
+
+    print("Inorder Traversal (Sorted):", end=' ')
+    tree.inorder(root)
+    print()
+
+    print("Preorder Traversal:", end=' ')
+    tree.preorder(root)
+    print()
