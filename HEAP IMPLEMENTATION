@@ -1,0 +1,18 @@
+import heapq
+min_heap = []
+max_heap = []
+
+numbers = [10, 20, 5, 6, 1, 8, 9]
+
+for num in numbers:
+    heapq.heappush(min_heap, num)
+    heapq.heappush(max_heap, -num)  
+    
+print("Min Heap:")
+while min_heap:
+    print(heapq.heappop(min_heap), end=" ")
+
+print()
+print("Max Heap:")
+while max_heap:
+    print(-heapq.heappop(max_heap), end=" ")  
