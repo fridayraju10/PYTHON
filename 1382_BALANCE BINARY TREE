@@ -1,0 +1,25 @@
+def __init__(self):
+        self.list = []
+
+    def inorder(self, root):
+        if root is None:
+            return
+        self.inorder(root.left)
+        self.list.append(root.val)
+        self.inorder(root.right)
+    
+    
+    
+    def createBST(self, list_, x, y):
+        if x > y:
+            return None
+        mid = (x + y) // 2
+        root = TreeNode(list_[mid])
+        root.left = self.createBST(list_, x, mid - 1)
+        root.right = self.createBST(list_, mid + 1, y)
+        return root
+    
+    def balanceBST(self, root):
+        self.inorder(root)
+        newnode = self.createBST(self.list, 0, len(self.list) - 1)
+        return newnode
