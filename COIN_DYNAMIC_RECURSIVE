@@ -1,0 +1,15 @@
+def coinCombinations(n, memo={}):
+    if n in memo:
+        return memo[n]
+    if n == 0:
+        return 1
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+    memo[n] = coinCombinations(n - 1, memo) + coinCombinations(n - 3, memo)
+    return memo[n]
+
+# Example usage
+n = 3
+print(coinCombinations(n))
