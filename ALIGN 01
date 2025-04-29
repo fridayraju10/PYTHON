@@ -1,0 +1,24 @@
+def segregate(a, n):
+    count = 0
+    for i in range(0, n):
+        if (a[i] == 0):
+            count = count + 1
+    for i in range(0, count):
+        a[i] = 0
+    for i in range(count, n):
+        a[i] = 1
+
+def print_list(a, n):
+    print("After arrangements ----->",end="")
+    for i in range(0, n):
+        print(a[i], end=" ")
+
+a = [0,1,0,1,1,0,0,0]
+n = len(a)
+
+print("Before arrangements ---->",end="")
+for i in range(0, n):
+    print(a[i], end=" ")
+print("\n")
+segregate(a, n)
+print_list(a, n)
