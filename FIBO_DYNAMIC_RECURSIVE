@@ -1,0 +1,19 @@
+def fibonacci(n, memo={}):
+    if n < 0:
+        raise ValueError("Input cannot be negative")
+    if n in memo:
+        return memo[n]
+    if n == 0:
+        memo[0] = 0
+    elif n == 1:
+        memo[1] = 1
+    else:
+        memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo)
+    return memo[n]
+
+if __name__ == "__main__":
+    num_terms = 10
+    print(f"Fibonacci series up to {num_terms} terms:")
+    for i in range(num_terms):
+        print(fibonacci(i), end=' ')
+    print()
