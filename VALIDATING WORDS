@@ -1,0 +1,42 @@
+def abc(a, b):
+    dp = [[0] * (len(b)+1) for _ in range(len(a)+1)]
+    for i in range(len(a)+1):
+        for j in range(len(b)+1):
+            if i == 0:
+                dp[i][j] = j  
+            elif j == 0:
+                dp[i][j] = i  
+            elif a[i-1] == b[j-1]:
+                dp[i][j] = dp[i-1][j-1]  
+            else:
+                dp[i][j] = 1 + min(dp[i-1][j],    
+                                   dp[i][j-1],    
+                                   dp[i-1][j-1])  
+    return dp[-1][-1]
+
+
+words = []
+print("Enter 5 words:")
+for _ in range(5):
+    words.append(input().strip().lower())
+
+
+user_input = input("Enter your word: ").strip().lower()
+
+
+min_distance = 100
+closest_word = ""
+
+for word in words:
+    distance = abc(user_input, word)
+    if distance < min_distance:
+        min_distance = distance
+        closest_word = word
+
+
+if min_distance == 0:
+    print("Correct word!")
+elif min_distance <= 2:
+    print(f'Did you mean "{closest_word}"??')
+else:
+    print("Invalid input.")
