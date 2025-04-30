@@ -1,0 +1,24 @@
+import random
+
+num_teams = int(input("Enter number of teams: "))
+
+teams = []
+print("Enter team names:")
+for i in range(num_teams):
+    teams.append(input())
+
+matches_per_pair = int(input("Enter number of matches between same teams: "))
+
+
+match_pairs = []
+for i in range(num_teams):
+    for j in range(i + 1, num_teams):
+        for _ in range(matches_per_pair):
+            match_pairs.append((teams[i], teams[j]))
+
+random.shuffle(match_pairs)
+
+match_number = 1
+for pair in match_pairs:
+    print("Match", match_number, ":", pair[0], "vs", pair[1])
+    match_number += 1
