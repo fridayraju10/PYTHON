@@ -1,0 +1,8 @@
+import qrcode
+text_message = "U GUYS R WELL DISCIPLINED.. BUT NEED TO WORK HARD.. ALL THE BEST.. MISS U ALL .. BE HAPPY...   BY RAJU VARMA"
+qr = qrcode.QRCode()
+qr.add_data(text_message)
+qr.make(fit=True)
+img = qr.make_image(fill_color="black", back_color="white")
+img.save("SVCET.png")
+print("Succes , saved as image")
