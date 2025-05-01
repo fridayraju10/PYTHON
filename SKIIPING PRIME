@@ -1,0 +1,31 @@
+def is_prime(a):
+    for i in range(2,a):
+        if(a%i==0):
+            return False
+    return True
+
+def next1(current,skip):
+    start=current+1 
+    count=0
+    while(True):
+        if(is_prime(start)):
+            count=count+1 
+            if(count>skip):
+              break 
+        start=start+1 
+    return start
+        
+def res(n):
+    current=2
+    result=[]
+    result.append(current)
+    while(len(result)!=n):
+        skip=current
+        current=next1(current,skip)
+        result.append(current)
+    return result
+    
+
+
+n=int(input("Enter any number"))
+print(res(n))
