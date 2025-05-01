@@ -1,0 +1,43 @@
+def is_safe(board, row, col, n):
+    for c in range(col, -1, -1):
+        if board[row][c] == 1:
+            return False
+
+    i, j = row, col
+    while i >= 0 and j >= 0:
+        if board[i][j] == 1:
+            return False
+        i -= 1
+        j -= 1
+
+    i, j = row, col
+    while i < n and j >= 0:
+        if board[i][j] == 1:
+            return False
+        i += 1
+        j -= 1
+
+    return True
+
+
+def nQueens(board, col, n):
+    if col >= n:
+        return True
+    for i in range(n):
+        if is_safe(board, i, col, n):
+            board[i][col] = 1
+            if nQueens(board, col + 1, n):
+                return True
+            board[i][col] = 0 
+    return False
+
+
+N = int(input("Enter size of board: "))
+board = [[0 for j in range(N)] for i in range(N)]
+if nQueens(board, 0, N):
+    for i in range(N):
+        for j in range(N):
+            print(board[i][j], end=" ")
+        print()
+else:
+    print("Not possible")
