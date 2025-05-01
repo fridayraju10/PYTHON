@@ -1,0 +1,28 @@
+class Graph:
+    def __init__(self, v):
+        self.adjList = [[] for _ in range(v)]
+
+    def addEdge(self, u, v):
+        self.adjList[u].append(v)
+        self.adjList[v].append(u)
+
+    def printAdjList(self):
+        for i in range(len(self.adjList)):
+            print(f"Adj List of Vertex {i}")
+            for j in self.adjList[i]:
+                print(f" {j}", end="")
+            print()
+
+
+if __name__ == "__main__":
+    
+
+    g = Graph(5)
+    g.addEdge(0, 1)
+    g.addEdge(2, 3)
+    g.addEdge(1, 2)
+    g.addEdge(3, 4)
+    g.addEdge(0, 4)
+    g.addEdge(1, 4)
+
+    g.printAdjList()
