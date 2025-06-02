@@ -1,0 +1,34 @@
+def isprime(a):
+    if a < 2:
+        return False
+    for i in range(2, int(a**0.5) + 1):
+        if a % i == 0:
+            return False
+    return True
+
+def sum_dig(a):
+    sum = 0
+    while a > 0:
+        sum += a % 10
+        a //= 10
+    return sum
+
+def all_digits_prime(n):
+    while n > 0:
+        digit = n % 10
+        if not isprime(digit):
+            return False
+        n //= 10
+    return True
+
+num = int(input("Enter how many such prime numbers you want: "))
+
+count = 0
+current = 2
+
+while count < num:
+    if isprime(current):
+        if isprime(sum_dig(current)) and all_digits_prime(current):
+            print(current)
+            count += 1
+    current += 1
