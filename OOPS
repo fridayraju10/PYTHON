@@ -1,0 +1,111 @@
+class Rec:
+    def set_dim(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        print(self.width)
+        return self.width * self.height
+
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+R1 = Rec()
+R1.set_dim(5, 4)
+print(R1.width)
+print("Area is", R1.area())
+print("Perimeter is:", R1.perimeter())
+-------------------------------------------------
+class abc:
+    name="raju"
+    def cal(self):
+        print(self.a)
+    def cal2(self):
+        print(self.a + self.b)
+        
+a1=abc()
+a1.a=20 
+a1.b=30
+a1.cal2()
+a1.cal()
+print(abc.name)
+------------------------------------------------
+class Rec:
+    def set_dim(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+        
+rectangle_list = []
+num_rectangles = int(input("Enter the number of rectangles: "))
+for i in range(num_rectangles):
+    R = Rec()
+    width = float(input(f"Enter the width of rectangle {i+1}: "))
+    height = float(input(f"Enter the height of rectangle {i+1}: "))
+    R.set_dim(width, height)
+    rectangle_list.append(R)
+for i in range(num_rectangles):
+    print(f"Rectangle {i+1}:")
+    print("Area is", rectangle_list[i].area())
+---------------------------------------------------------------------
+class Cognizant:
+    company_name = "Cognizant"
+    tax_percentage = 10
+
+    def __init__(self, name, age, salary, share_percentage):
+        self.name = name
+        self.age = age
+        self.salary = salary
+        self.share_percentage = share_percentage
+        self.tax = 0
+        self.share = 0
+
+    def cal_tax(self):
+        self.tax = (self.salary * Cognizant.tax_percentage) // 100
+
+    def cal_share(self):
+        self.share = (self.salary * self.share_percentage) // 100
+
+    def display_info(self):
+        self.cal_tax()
+        self.cal_share()
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Salary:", self.salary)
+        print("Tax to pay:", self.tax)
+        print("Share from company:", self.share)
+
+
+emp1 = Cognizant("John", 34, 56000, 11)
+emp2 = Cognizant("RAJ", 24, 46000, 10)
+emp1.display_info()
+emp2.display_info()
+---------------------------------------------------------------------
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+
+person1 = Person("SUMIT", 30)
+person1.display()
+---------------------------------------------------------------
+def add_numbers(*args):
+    total = 0
+    for num in args:
+        total += num
+    print("Sum:", total)
+
+add_numbers(10, 20)
+add_numbers(5, 10, 15, 20)
+------------------------------------------
+def print_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} = {value}")
+
+print_info(name="Alice", age=25, city="Delhi")
+----------------------------------------------
