@@ -1,0 +1,8 @@
+even_squares = [x * x for x in range(10) if x % 2 == 0]
+print(even_squares)  
+-----------------------------------------
+unique_lengths = {len(word) for word in ["hi", "hello", "python", "hi"]}
+print(unique_lengths)  
+-------------------------------------------------
+squares_dict = {x: x * x for x in range(5)}
+print(squares_dict)  # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
