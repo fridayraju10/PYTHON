@@ -1,0 +1,22 @@
+def roman_to_int(roman):
+    roman_map = {
+        'X': 10,
+        'IX': 9,
+        'V': 5,
+        'IV': 4,
+        'I': 1
+    }
+    values = ['X', 'IX', 'V', 'IV', 'I']
+    i = 0
+    num = 0
+    
+    while i < len(roman):
+        if i+1 < len(roman) and roman[i:i+2] in roman_map:
+            num += roman_map[roman[i:i+2]]
+            i += 2
+        else:
+            num += roman_map[roman[i]]
+            i += 1
+    return num
+roman_number = 'XIX'
+print(f"The integer value of {roman_number} is: {roman_to_int(roman_number)}")
