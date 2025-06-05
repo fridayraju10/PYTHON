@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+overs = np.arange(1, 11)
+score = [1, 6, 20, 3, 5, 6, 13, 5, 7, 21]
+
+plt.bar(overs, score, color='green')
+
+plt.title("India's Score Over 10 Overs (Bar Chart)")
+plt.xlabel("Over Number")
+plt.ylabel("Runs Scored")
+plt.xticks(overs)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
