@@ -1,0 +1,22 @@
+names = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+memo =  [0,   1,   1,   1,   2,   2,   1,   2,   1,   2,   3]
+salary = [1000,2000,3000,4500,2000,5000,1500,2300,1300,1100]
+
+data = list(zip(names, memo, salary))
+removed = [emp for emp in data if emp[2] > 4000]
+remaining = [emp for emp in data if emp[2] <= 4000]
+
+remaining.sort(key=lambda x: x[2], reverse=True)
+
+to_remove = []
+for emp in remaining:
+    if emp[1] >= 2:
+        to_remove.append(emp)
+    if len(to_remove) == 3:
+        break
+
+removed += to_remove
+
+print("Removed Employees:")
+for emp in removed:
+    print(f"Name: {emp[0]}, Memos: {emp[1]}, Salary: {emp[2]}")
