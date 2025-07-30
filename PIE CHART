@@ -1,0 +1,11 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data = pd.read_excel('pop.xlsx')
+states = data['State']
+populations = data['Population']
+plt.figure(figsize=(8, 8))
+plt.pie(populations, labels=states, autopct='%1.1f%%',
+        startangle=140)
+plt.title("State-wise Population in India (in Crores)")
+plt.axis('equal')
+plt.show()
