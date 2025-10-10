@@ -1,0 +1,6 @@
+import pandas as pd
+df = pd.read_excel('raju.xlsx', sheet_name='Sheet1')
+print(df)
+df['Active']=['Yes','No','No']
+with pd.ExcelWriter('raju.xlsx', engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
+    df.to_excel(writer, sheet_name='Sheet1', index=False)
