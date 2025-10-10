@@ -1,0 +1,19 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+data = {
+    'Semester': ['Sem1', 'Sem2', 'Sem3', 'Sem4', 'Sem5', 'Sem6', 'Sem7', 'Sem8'],
+    'Marks': [77, 88, 67, 84, 90, 69, 97, 65]
+}
+df = pd.DataFrame(data)
+
+sns.set_theme(style="darkgrid")
+
+sns.lineplot(data=df, x='Semester', y='Marks', marker='o', linewidth=2, color='blue')
+plt.title("Your Marks Over 8 Semesters")
+plt.xlabel("Semester")
+plt.ylabel("Marks")
+plt.ylim(0, 100)
+
+plt.show()
