@@ -1,0 +1,27 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Your marks data
+data = {
+    'Semester': ['Sem1', 'Sem2', 'Sem3', 'Sem4', 'Sem5', 'Sem6', 'Sem7', 'Sem8'],
+    'Marks': [77, 88, 67, 84, 90, 69, 97, 65]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Set Seaborn theme
+sns.set_theme(style="whitegrid")
+
+# Create scatter plot
+sns.scatterplot(data=df, x='Semester', y='Marks', s=100, color='green', marker='D')
+
+# Add title and labels
+plt.title("Scatter Plot of Your Semester Marks")
+plt.xlabel("Semester")
+plt.ylabel("Marks")
+plt.ylim(0, 100)
+
+# Show plot
+plt.show()
