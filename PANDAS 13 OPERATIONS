@@ -1,0 +1,19 @@
+import pandas as pd
+d={'name':['Raju','pavi','san'],'Age':[37,30,35],'dept':['cse','cse','ece']}
+x=pd.DataFrame(d)
+x.loc[3]=['Ravi',88,'IT']
+x['Sal']=[1000,2000,3000,4000]
+print(x.iloc[1])
+x.loc[x['name']=='Raju','Sal']=4500
+x['name']='Sachin'
+print(x['Sal'])
+x.loc[0]=['Raju',37,'CSE',5600]
+print(x.sort_values(by='Sal',ascending=True))
+print(x.sort_index(ascending=False))
+print(x[x['Sal']>2000])
+x.drop(index=2,inplace=True)
+x.drop(columns='Sal', inplace=True)  # Deletes the 'dept' column
+for i,j in x.iterrows():
+    print(j['name'], "age is ",j['Age'] )
+print(x)
+
