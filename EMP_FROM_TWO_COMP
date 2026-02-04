@@ -1,0 +1,52 @@
+tax_rate = 10
+
+class cts:
+    comp_name = "Cognizant"
+    def __init__(self, name, designation):
+        self.name = name
+        self.desig = designation
+        
+    def salary(self):
+        match self.desig:
+            case 'Developer': self.pay = 100000 
+            case 'Tester': self.pay = 600000
+            case _: self.pay = 500000  
+            
+    def cal_tax(self):
+        self.tax = self.pay * (tax_rate / 100) 
+    
+    def display(self):
+        self.salary()
+        self.cal_tax()
+        print("Mr/Ms {} works at {} has to pay Rs{}".format(self.name, cts.comp_name, self.tax))
+        
+
+class Microsoft:
+    comp_name = "Micro"
+    def __init__(self, name, designation):
+        self.name = name
+        self.desig = designation
+        
+    def salary(self):
+        match self.desig:
+            case 'Developer': self.pay = 120000 
+            case 'Tester': self.pay = 1000000
+            case _: self.pay = 600000  
+            
+    def cal_tax(self):
+        self.tax = self.pay * (tax_rate / 100) 
+    
+    def display(self):
+        self.salary()
+        self.cal_tax()
+        print("Mr/Ms {} works at {} has to pay Rs{}".format(self.name, Microsoft.comp_name, self.tax))
+        
+
+# Example usage
+a = cts('Raju', 'Developer')
+b = cts("Varun", 'Tester')
+c = Microsoft("Ajay", "Tester")
+
+a.display()
+b.display()
+c.display()
