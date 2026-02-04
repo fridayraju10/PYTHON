@@ -1,0 +1,47 @@
+class Student:
+    l = []
+    names = []
+    grades = []
+
+    def __init__(self, name, n1, n2, n3):
+        self.m1 = n1
+        self.m2 = n2
+        self.m3 = n3
+        Student.names.append(name)
+
+    def cal_per(self):
+        self.avg = (self.m1 + self.m2 + self.m3) // 3
+        Student.l.append(self.avg)
+
+    def assign_grade(self):
+        match True:
+            case _ if self.avg > 80:
+                Student.grades.append("Excellent : A grade")
+            case _ if self.avg > 60:
+                Student.grades.append("Average : B grade")
+            case _:
+                Student.grades.append("Below Avg : C grade")
+
+    def rank(self):
+        x = list(zip(Student.l, Student.names, Student.grades))
+        res = sorted(x, reverse=True)
+        index = 1
+        for i in res:
+            print("Rank{}: Mr/Ms {} has scored {}% , Status :{}".format(index, i[1], i[0], i[2]))
+            index += 1
+
+
+# Example usage
+s1 = Student("Raju", 30, 40, 50)
+s1.cal_per()
+s1.assign_grade()
+
+s2 = Student("Arun", 90, 66, 34)
+s2.cal_per()
+s2.assign_grade()
+
+s3 = Student("Rosy", 77, 55, 44)
+s3.cal_per()
+s3.assign_grade()
+
+s1.rank()
