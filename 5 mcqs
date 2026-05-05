@@ -1,0 +1,31 @@
+a=10 
+x=""
+if a<12 or a<10:
+    a=a+2 
+if a==12 and a+1 ==13:
+    print("a"*a)
+else:
+    x=x+'5'
+if x:
+    print(x)
+else:
+    print("x") 
+-----------------------------------------
+
+def ace(x):
+    return len(x)+1 
+def boys(a):
+    return "We are smart"
+    
+def girls(y):
+    print(sum(y)*" No")
+    
+for i in range(ace('ace')):
+    print(boys(10))
+girls([1,2,3])
+---------------------------------------------- 
+a=[30,40,50,88,77,66,[4,5,6,5,5]]
+for i in a[6]:
+    a.pop() 
+print(a)
+--------------------------------------------------------
