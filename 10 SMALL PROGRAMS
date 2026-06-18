@@ -1,0 +1,57 @@
+1 ) Pattern printing (Standing triangle)
+input: integer 
+a=7 
+output : 7 lines like structure below 
+* 
+* * 
+* * * 
+* * * * 
+* * *
+* *
+*
+Note : Consider our input is only odd number
+-------------------------------------------------------------------
+2) Input : List of strings 
+  output: List of integer (append number of vowels from all strings)
+
+Testcase: ["Raju,"Ram","Anu"]
+output: [2,1,2]
+--------------------------------------------------------------------
+3) Reverse the given integer 
+input: a=3452 
+output: 2543 
+-------------------------------------------------------------------
+4) Find the factorial of given integer using for loop
+input: a=5 
+output: 120
+----------------------------------------------------------------------
+5) Print Fibonacci series of given integer using recursion
+input: a=7 
+output: 0 1 1 2 3 5 8 
+----------------------------------------------------------------------
+6) Find LCM of 3 integers
+input: a=3 , b=4 , c= 2
+output: 12 
+----------------------------------------------------------------------
+7) Binary to integer conversion (decimal) 
+input: a="1011" (String)
+output: 11 
+----------------------------------------------------------------------
+8) Convert String to integer (consider string contains only digits)
+Note: Without using int()
+input: a="321"
+output: b=321 (integer)
+----------------------------------------------------------------------------------
+9) Check the number(integer) is palindrome or not 
+input: a=121 
+output: True 
+------------------------------------------------------------------------------------------
+10) Find the subarray which has maximum sum where subarray length is given 
+
+input: a=[2,5,-5,14,8,9,-11]
+b=2
+output: 17   [8+9] 
+Note : Subarray should be contiguous , No overlapping 
+ie. [2,5] is first subarray, [5,-5] cannot be subarray since is overlapping, next subarray is [-5,14]
+----------------------------------------------------------------------------------------------- 
+
